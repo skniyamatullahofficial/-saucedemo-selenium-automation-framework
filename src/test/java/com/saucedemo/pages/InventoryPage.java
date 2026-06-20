@@ -27,9 +27,5 @@ public class InventoryPage {
 
     public int getAllProductCount() {
         return driver.findElements(productItems).size();
-
     }
-
-
-
-    }
+}

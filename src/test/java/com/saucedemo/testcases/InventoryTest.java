@@ -26,7 +26,6 @@ public class InventoryTest extends BaseTest {
         String currentUrl = loginPage.getCurrentPageUrl();
         assertion.assertTrue(currentUrl.contains(INVENTORY_URL_ROUTE),
                 INCORRECT_PAGE_URL);
-
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.clickOnAddToCartButton();
         String addedProductCount = inventoryPage.cartIconText();
@@ -36,19 +35,15 @@ public class InventoryTest extends BaseTest {
 
     @Test
     public void verifyAllProductsAreDisplayed() throws IOException {
-
         SoftAssert assertion = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
         String username = PropertiesUtils.readFromProperties(USERNAME);
         String password = PropertiesUtils.readFromProperties(PASSWORD);
         loginPage.loginToApplication(username, password);
-
         InventoryPage inventoryPage = new InventoryPage(driver);
         int productCount = inventoryPage.getAllProductCount();
-        //System.out.println("Actual Product Count = " + productCount);
         assertion.assertEquals(productCount, INVENTORY_PRODUCTS_COUNT,
                 ALL_PRODUCTS_NOT_DISPLAYED);
         assertion.assertAll();
     }
-
 }
