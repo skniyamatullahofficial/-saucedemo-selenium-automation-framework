@@ -8,9 +8,8 @@ public class CartPage {
     WebDriver driver;
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
-    }
-#
+        this.driver = driver; }
+
     By cartProductName = By.className("inventory_item_name");
     By cartProductPrice = By.className("inventory_item_price");
 
