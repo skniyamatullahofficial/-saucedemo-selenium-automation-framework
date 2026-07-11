@@ -11,5 +11,4 @@ public class GlobalConstants {
     public static final String URL = "url";
     public static final String PROPERTIES_PATH = System.getProperty("user.dir") +
             "/src/test/resources/config.properties" ;
-
 }

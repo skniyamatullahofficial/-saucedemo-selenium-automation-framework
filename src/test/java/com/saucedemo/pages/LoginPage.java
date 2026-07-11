@@ -25,5 +25,4 @@ public class LoginPage {
     public String getCurrentPageUrl() {
         return driver.getCurrentUrl();
     }
-
 }

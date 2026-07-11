@@ -33,10 +33,5 @@ public void loginWithValidUser(String username, String password){
                 {"visual_user", "secret_sauce"}
         };
         return loginData;
-
-
-
-
 }
-
 }
