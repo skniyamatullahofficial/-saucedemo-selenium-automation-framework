@@ -12,11 +12,16 @@ public class CartPage {
 
     By cartProductName = By.className("inventory_item_name");
     By cartProductPrice = By.className("inventory_item_price");
+    By cartItems = By.className("cart_item");
+    By removeButton = By.id("remove-sauce-labs-backpack");
 
     public String getCartProductName() {
         return driver.findElement(cartProductName).getText();
     }
     public String getCartProductPrice() {
         return driver.findElement(cartProductPrice).getText();
+    }
+    public int getCartItemCount() { return driver.findElements(cartItems).size();}
+    public void clickOnRemoveButton() { driver.findElement(removeButton).click();
     }
 }

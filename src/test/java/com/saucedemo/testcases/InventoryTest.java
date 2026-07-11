@@ -67,4 +67,21 @@ public class InventoryTest extends BaseTest {
         assertion.assertEquals(actualProductPrice, expectedProductPrice, PRODUCT_PRICE_MISMATCH);
         assertion.assertAll();
     }
+
+    @Test
+    public void verifyRemoveProductFromCart() throws IOException {
+        SoftAssert assertion = new SoftAssert();
+        LoginPage loginPage = new LoginPage(driver);
+        String username = PropertiesUtils.readFromProperties(USERNAME);
+        String password = PropertiesUtils.readFromProperties(PASSWORD);
+        loginPage.loginToApplication(username, password);
+        InventoryPage inventoryPage = new InventoryPage(driver);
+        inventoryPage.clickOnAddToCartButton();
+        inventoryPage.clickOnCartIcon();
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickOnRemoveButton();
+        int actualCartCount = cartPage.getCartItemCount();
+        assertion.assertEquals(actualCartCount, 0, PRODUCT_NOT_REMOVED_FROM_CART);
+        assertion.assertAll();
+    }
 }

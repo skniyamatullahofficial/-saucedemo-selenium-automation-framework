@@ -18,6 +18,7 @@ public class InventoryPage {
     By firstProductName = By.className("inventory_item_name");
     By firstProductPrice = By.className("inventory_item_price");
     By cartIconButton = By.className("shopping_cart_link");
+    By removeButton = By.id("remove-sauce-labs-backpack");
 
     //Associate Methods
     public void clickOnAddToCartButton () {
@@ -27,6 +28,7 @@ public class InventoryPage {
     public int getAllProductCount() { return driver.findElements(productItems).size(); }
     public String getFirstProductName() { return driver.findElement(firstProductName).getText(); }
     public String getFirstProductPrice() { return driver.findElement(firstProductPrice).getText(); }
-    public void clickOnCartIcon() { driver.findElement(cartIcon).click();
+    public void clickOnCartIcon() { driver.findElement(cartIcon).click();}
+    public void clickOnRemoveButton() {driver.findElement(removeButton).click();
     }
 }
